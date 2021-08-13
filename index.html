@@ -6,11 +6,41 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Tip Calculator</title>
     <link href="styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
 <section>
     <img class="logo1" src="images/logo.svg" alt="logo">
-    <div class="frame1">
+    <div class="frame">
+        <div class="frame1">
+            <div class="container-bill">
+                <span>Bill</span>
+                <label>
+                    <input type="text" name="bill" class="input__dollar">
+                </label>
+            </div>
+            <div class="container__tip">
+                <span>Select Tip %</span>
+                <div class="tip__grid">
+                    <div class="tip">5%</div>
+                    <div class="tip">10%</div>
+                    <div class="tip">15%</div>
+                </div>
+                <div class="tip__grid">
+                    <div class="tip">25%</div>
+                    <div class="tip">50%</div>
+                    <div class="tip" style="background: none">Custom</div>
+                </div>
+            </div>
+            <div class="container__people">
+                <span>Number of People</span>
+                <label>
+                    <input type="text" name="bill" class="input__people">
+                </label>
+            </div>
+        </div>
         <div class="frame2"></div>
     </div>
 </section>
