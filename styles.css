@@ -6,23 +6,24 @@
 
 body {
     background: #C5E4E7;
-    font-family: 'Space Mono', monospace;
+    /*font-family: 'Space Mono', monospace;*/
     height: 100vh;
     color: #01595d;
     font-weight: bold;
     font-size: 12px;
 }
 
-a {
-    text-decoration: none;
-}
+/*a {*/
+/*    text-decoration: none;*/
+/*}*/
 
 section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 85%;
+    height: 94%;
+    font-family: 'Space Mono', monospace;
 }
 
 .frame {
@@ -41,11 +42,9 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    /*flex-wrap: wrap;*/
     width: 20.813rem;
     height: 363px;
     border-radius: 15px;
-    /*border: 1px solid red;*/
 }
 
 .frame2 {
@@ -59,8 +58,6 @@ section {
 }
 
 .container-bill {
-    /*position: absolute;*/
-    /*width: 50%;*/
     left: 1.75rem;
     top: 28px;
 }
@@ -71,9 +68,6 @@ span {
 
 .input__dollar {
     display: flex;
-    /*position: absolute;*/
-    /*top: 1.75rem;*/
-    /*left: 1.75rem;*/
     background-image: url("./images/icon-dollar.svg");
     background-repeat: no-repeat;
     background-position: 0.6rem center;
@@ -90,17 +84,12 @@ span {
 }
 
 .container__people {
-    /*position: absolute;*/
     width: 50%;
     left: 1.75rem;
-    top: 28px;
+    top: 1.75rem;
 }
 
 .input__people {
-    /*display: flex;*/
-    /*position: absolute;*/
-    /*top: 1.75rem;*/
-    /*left: 1.75rem;*/
     background-image: url("./images/icon-person.svg");
     background-repeat: no-repeat;
     background-position: 0.6rem center;
@@ -116,15 +105,9 @@ span {
     margin-top: 0.25rem;
 }
 
-.container__tip {
-    /*width: 100%;*/
-}
-
 .tip__grid {
     display: flex;
     justify-content: space-between;
-    /*margin-top: 5px;*/
-    /*margin-right: 5px;*/
 }
 
 .tip {
@@ -139,6 +122,10 @@ span {
     align-items: center;
     font-size: large;
     margin-top: 0.813rem;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Space Mono', monospace;
+    border: none;
 }
 
 .tip:nth-child(3) {
@@ -151,7 +138,6 @@ span {
     flex-direction: column;
     width: 17.875rem;
     height: 18.563rem;
-    /*border: 1px solid red;*/
 }
 
 .tip__amount:nth-child(2) {
@@ -184,7 +170,7 @@ span {
     color: hsl(172, 67%, 45%);
 }
 
-.button__reset {
+.reset {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -195,6 +181,9 @@ span {
     border-radius: 5px;
     font-size: 15px;
     color: #00494C;
+    border: none;
+    font-family: 'Space Mono', monospace;
+    font-weight: bold;
 }
 
 
