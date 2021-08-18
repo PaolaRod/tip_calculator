@@ -2,20 +2,17 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+    font-weight: bold;
 }
 
 body {
     background: #C5E4E7;
-    /*font-family: 'Space Mono', monospace;*/
     height: 100vh;
     color: #01595d;
     font-weight: bold;
     font-size: 12px;
 }
-
-/*a {*/
-/*    text-decoration: none;*/
-/*}*/
 
 section {
     display: flex;
@@ -23,7 +20,6 @@ section {
     justify-content: center;
     align-items: center;
     height: 94%;
-    font-family: 'Space Mono', monospace;
 }
 
 .frame {
@@ -57,7 +53,7 @@ section {
     align-items: center;
 }
 
-.container-bill {
+.container__bill {
     left: 1.75rem;
     top: 28px;
 }
@@ -66,9 +62,8 @@ span {
     color: #00494C;
 }
 
-.input__dollar {
+.input {
     display: flex;
-    background-image: url("./images/icon-dollar.svg");
     background-repeat: no-repeat;
     background-position: 0.6rem center;
     background-color: #E6F3F4;
@@ -81,28 +76,22 @@ span {
     outline: none;
     border: 0;
     margin-top: 0.25rem;
+    color: #00494C;
+    font-size: 24px;
+}
+
+.input.dollar {
+    background-image: url("./images/icon-dollar.svg");
 }
 
 .container__people {
-    width: 50%;
-    left: 1.75rem;
-    top: 1.75rem;
+    width: 100%;
+    /*left: 1.75rem;*/
+    /*top: 1.75rem;*/
 }
 
-.input__people {
+.input.people {
     background-image: url("./images/icon-person.svg");
-    background-repeat: no-repeat;
-    background-position: 0.6rem center;
-    background-color: #E6F3F4;
-    background-size: 2.5%;
-    padding: 0.5rem 0.5rem;
-    border-radius: 0.5rem;
-    text-align: end;
-    width: 20.813rem;
-    height: 2.375rem;
-    outline: none;
-    border: 0;
-    margin-top: 0.25rem;
 }
 
 .tip__grid {
@@ -184,6 +173,30 @@ span {
     border: none;
     font-family: 'Space Mono', monospace;
     font-weight: bold;
+}
+
+.focus {
+    border: 2px solid hsl(172, 67%, 45%);
+}
+
+.people__text {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.zero {
+    color: red;
+}
+
+.fadeOut {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.fadeIn {
+    opacity: 1;
+    pointer-events: all;
 }
 
 
