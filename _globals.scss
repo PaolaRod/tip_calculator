@@ -1,0 +1,233 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
+  font-weight: bold;
+  color: $darkGrayishCyan;
+}
+
+body {
+  background: $veryLightBlue;
+  height: 100vh;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 94%;
+}
+
+.frame {
+  //position: relative;
+  display: flex;
+  flex-direction: column;
+  //justify-content: space-evenly;
+  width: 100%;
+  height: 80%;
+  background: $white;
+  border-radius: 30px;
+
+  @include breakpoint-up(large) {
+    flex-direction: row;
+    width: 795px;
+    height: 416px;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 5.8%;
+  }
+}
+
+.frame1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90%;
+  height: auto;
+  border-radius: 15px;
+
+  @include breakpoint-up(large) {
+    width: 20.813rem;
+    height: 363px;
+  }
+}
+
+.frame2 {
+  display: flex;
+  width: 351px;
+  height: 363px;
+  background: $veryDarkCyan;
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.container__bill {
+  left: 1.75rem;
+  top: 28px;
+}
+
+span {
+  //color: $veryDarkCyan;
+}
+
+.input {
+  display: flex;
+  background-repeat: no-repeat;
+  background-position: 0.6rem center;
+  background-color: $veryLight;
+  background-size: 2.5%;
+  padding: 0.5rem 0.5rem;
+  border-radius: 0.5rem;
+  text-align: end;
+  width: 20.813rem;
+  height: 2.375rem;
+  outline: none;
+  border: 0;
+  margin-top: 0.25rem;
+  color: $veryDarkCyan;
+  font-size: 24px;
+}
+
+input::placeholder {
+  color: $darkGrayishCyan;
+}
+
+.input.dollar {
+  background-image: url("images/icon-dollar.svg");
+}
+
+.container__people {
+  width: 100%;
+  /*left: 1.75rem;*/
+  /*top: 1.75rem;*/
+}
+
+//.container__tip {
+//  display: flex;
+//  flex-wrap: wrap;
+//  width: 100%;
+//}
+
+.input.people {
+  background-image: url("images/icon-person.svg");
+}
+
+.tip__grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include breakpoint-up(large) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.tip {
+  display: flex;
+  background-color: $veryDarkCyan;
+  border-radius: 0.3rem;
+  width: 9.375rem;
+  color: $white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  cursor: pointer;
+  //font-weight: bold;
+  //font-family: "Space Mono", monospace;
+  border: none;
+
+  @include breakpoint-up(large) {
+    margin-top: 0.813rem;
+    width: 5.938rem;
+    height: 2.25rem;
+  }
+}
+
+.tip:nth-child(3) {
+  background-color: $strongCyan;
+  color: $veryDarkCyan;
+}
+
+.amounts {
+  display: flex;
+  flex-direction: column;
+  width: 17.875rem;
+  height: 18.563rem;
+}
+
+.tip__amount:nth-child(2) {
+  margin-top: 1rem;
+}
+
+.tip__amount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 4.313rem;
+}
+
+.text__amount {
+  display: flex;
+  flex-direction: column;
+}
+
+.tip3 {
+  color: $white;
+}
+
+.person {
+  color: $darkGrayishCyan;
+}
+
+.amount {
+  font-size: 35px;
+  color: $strongCyan;
+}
+
+.reset {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  background-color: $strongCyan;
+  margin-bottom: 0;
+  height: 2.125rem;
+  border-radius: 5px;
+  font-size: 15px;
+  color: $veryDarkCyan;
+  border: none;
+  font-family: "Space Mono", monospace;
+  font-weight: bold;
+}
+
+.focus {
+  border: 2px solid $strongCyan;
+}
+
+.people__text {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.zero {
+  color: $red;
+}
+
+.fadeOut {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fadeIn {
+  opacity: 1;
+  pointer-events: all;
+}
