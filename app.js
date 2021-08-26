@@ -12,7 +12,11 @@ const tipApp = () => {
         const zero = document.querySelector('.zero');
 
         billBtn.addEventListener('click', () => {
-            billBtn.classList.add('focus');
+            billBtn.classList.add('focusCyan');
+        });
+
+        peopleBtn.addEventListener('click', () => {
+            peopleBtn.classList.add('focusRed');
         });
 
         tips.forEach(tip => {
@@ -20,7 +24,7 @@ const tipApp = () => {
                 tipAmount = parseInt(billBtn.value) * (parseInt(tip.innerText) / 100);
 
                 if (parseInt(peopleBtn.value) === 0 || peopleBtn.value === '') {
-                    console.log('No puede ser 0')
+                    console.log('No puede ser 0');
                     zero.classList.add('fadeIn');
                 } else if (zero.classList.contains('fadeIn')) {
                     zero.classList.remove('fadeIn');
@@ -41,8 +45,10 @@ const tipApp = () => {
         resetBtn.addEventListener('click', () => {
             billBtn.value = "";
             peopleBtn.value = "";
-            inputTotal.textContent = '$0.00';
-            inputTipAmount.textContent = '$0.00';
+            inputTotal.textContent = '0.00';
+            inputTipAmount.textContent = '0.00';
+            billBtn.classList.remove('focusCyan');
+            peopleBtn.classList.remove('focusRed');
             // tipAmount = 0;
             // total = 0;
         });
