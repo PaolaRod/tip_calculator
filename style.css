@@ -255,7 +255,7 @@ input::placeholder {
   }
 }
 
-.tip:nth-child(3) {
+.tip:hover {
   background-color: #26c0ab;
   color: #00494d;
 }

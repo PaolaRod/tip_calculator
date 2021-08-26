@@ -190,11 +190,7 @@ input::placeholder {
   }
 }
 
-//  .tip:nth-child(2n) {
-//    margin-left: 1rem;
-//}
-
-.tip:nth-child(3) {
+.tip:hover {
   background-color: $strongCyan;
   color: $veryDarkCyan;
 }
