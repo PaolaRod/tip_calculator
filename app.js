@@ -2,6 +2,23 @@ const billBtn = document.querySelector(".container__bill input");
 const peopleBtn = document.querySelector(".container__people input");
 const inputTipAmount = document.querySelector("[data-tip-amount]");
 const inputTotal = document.querySelector("[data-amount-total]");
+const form = document.getElementById('frame1');
+
+billBtn.addEventListener('focus', (event) => {
+    event.target.style.border = '2px solid hsl(172, 67%, 45%)';
+  });
+
+billBtn.addEventListener('blur', (event) => {
+    event.target.style.border = '';
+  });
+
+peopleBtn.addEventListener('focus', (event) => {
+    event.target.style.border = '2px solid hsl(0, 100%, 50%)';
+  });
+
+peopleBtn.addEventListener('blur', (event) => {
+    event.target.style.border = '';
+  });
 
 const tipApp = () => {
   let tipAmount = 0;
@@ -10,14 +27,6 @@ const tipApp = () => {
   const selectTip = () => {
     const tips = document.querySelectorAll(".tip");
     const zero = document.querySelector(".zero");
-
-    billBtn.addEventListener("click", () => {
-      billBtn.classList.add("focusCyan");
-    });
-
-    peopleBtn.addEventListener("click", () => {
-      peopleBtn.classList.add("focusRed");
-    });
 
     tips.forEach((tip) => {
       tip.addEventListener("click", () => {
@@ -33,8 +42,6 @@ const tipApp = () => {
         inputTotal.textContent = tipAmount.toFixed(2);
         total = tipAmount / parseInt(peopleBtn.value);
         inputTipAmount.textContent = total.toFixed(2);
-        billBtn.classList.remove("focusCyan");
-        peopleBtn.classList.remove("focusRed");
       });
     });
   };
@@ -47,8 +54,6 @@ const tipApp = () => {
       peopleBtn.value = "";
       inputTotal.textContent = "0.00";
       inputTipAmount.textContent = "0.00";
-      billBtn.classList.remove("focusCyan");
-      peopleBtn.classList.remove("focusRed");
       // tipAmount = 0;
       // total = 0;
     });
