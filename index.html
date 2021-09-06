@@ -18,18 +18,18 @@
             <div class="container__bill">
                 <span>Bill</span>
                 <label>
-                    <input type="text" name="bill" class="input dollar" placeholder="0">
+                    <input name="bill" class="input dollar" placeholder="0">
                 </label>
             </div>
             <div class="container__tip">
                 <span>Select Tip %</span>
                 <div class="tip__grid">
-                    <button class="tip">5%</button>
-                    <button class="tip">10%</button>
-                    <button class="tip">15%</button>
-                    <button class="tip">25%</button>
-                    <button class="tip">50%</button>
-                    <button class="tip">Custom</button>
+                    <button class="tip" value="0.05">5%</button>
+                    <button class="tip" value ="0.1">10%</button>
+                    <button class="tip" value ="0.15">15%</button>
+                    <button class="tip" value ="0.25">25%</button>
+                    <button class="tip" value ="0.5">50%</button>
+                    <input name="custom" class="custom" placeholder="Custom" id="btnCustom">
                 </div>
             </div>
             <div class="container__people">
@@ -38,7 +38,7 @@
                     <span class="zero fadeOut">Can't be zero</span>
                 </div>
                 <label>
-                    <input type="text" name="bill" class="input people" placeholder="0">
+                    <input name="people" class="input people" placeholder="0">
                 </label>
             </div>
         </div>

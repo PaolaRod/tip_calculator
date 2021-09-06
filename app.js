@@ -2,65 +2,97 @@ const billBtn = document.querySelector(".container__bill input");
 const peopleBtn = document.querySelector(".container__people input");
 const inputTipAmount = document.querySelector("[data-tip-amount]");
 const inputTotal = document.querySelector("[data-amount-total]");
-const form = document.getElementById('frame1');
+const tips = document.querySelectorAll(".tip");
+const customBtn = document.querySelector(".custom");
+const zero = document.querySelector(".zero");
 
-billBtn.addEventListener('focus', (event) => {
-    event.target.style.border = '2px solid hsl(172, 67%, 45%)';
+let bill = 0;
+let people = 1;
+let tip = 0;
+let tipAmount = 0;
+let total = 0;
+
+const validateNum = (n) => {
+  let rgx = /^[0-9]*\.?[0-9]*$/;
+  return n.match(rgx);
+}
+
+const validateInt = (n) => {
+  let rgx = /^[0-9]*$/;
+  return n.match(rgx);
+}
+
+const getBill = () => {
+  if (!validateNum(billBtn.value)) {
+    billBtn.value = billBtn.value.substring(0, billBtn.value.length - 1);
+  }
+
+  bill = parseFloat(billBtn.value);
+  calTip();
+}
+
+const selectTip = (e) => {
+  tips.forEach((btn) => {
+    if (e.target.innerHTML === btn.innerHTML) {
+      tip = parseFloat(btn.innerHTML) / 100;
+    }
   });
+  customBtn.value = "";
+  calTip();
+}
 
-billBtn.addEventListener('blur', (event) => {
-    event.target.style.border = '';
+const getPeople = () => {
+  if (!validateInt(peopleBtn.value)) {
+    peopleBtn.value = peopleBtn.value.substring(0, peopleBtn.value.length - 1);
+  }
+
+  people = parseFloat(peopleBtn.value);
+
+  if (people === 0) {
+    zero.classList.add("fadeIn");
+  } else if (zero.classList.contains("fadeIn")) {
+    zero.classList.remove("fadeIn");
+    zero.classList.add("fadeOut");
+  }
+
+  calTip();
+}
+
+const custom = () => {
+  tip = parseFloat(customBtn.value) / 100;
+
+  if (customBtn.value !== "") {
+    calTip();
+  }
+}
+
+const calTip = () => {
+  tipAmount = (bill * tip) / people;
+  total = bill * tip;
+  inputTipAmount.textContent = tipAmount.toFixed(2);
+  inputTotal.textContent = total.toFixed(2);
+}
+
+const resetForm = () => {
+  const resetBtn = document.querySelector(".reset");
+
+  resetBtn.addEventListener("click", () => {
+    billBtn.value = "";
+    tip = 0;
+    peopleBtn.value = "";
+    inputTotal.textContent = "0.00";
+    inputTipAmount.textContent = "0.00";
+    customBtn.value = "";
+    // tipAmount = 0;
+    // total = 0;
   });
-
-peopleBtn.addEventListener('focus', (event) => {
-    event.target.style.border = '2px solid hsl(0, 100%, 50%)';
-  });
-
-peopleBtn.addEventListener('blur', (event) => {
-    event.target.style.border = '';
-  });
-
-const tipApp = () => {
-  let tipAmount = 0;
-  let total = 0;
-
-  const selectTip = () => {
-    const tips = document.querySelectorAll(".tip");
-    const zero = document.querySelector(".zero");
-
-    tips.forEach((tip) => {
-      tip.addEventListener("click", () => {
-        if (parseInt(peopleBtn.value) === 0 || peopleBtn.value === "") {
-          console.log("No puede ser 0");
-          zero.classList.add("fadeIn");
-          return;
-        } else if (zero.classList.contains("fadeIn")) {
-          zero.classList.remove("fadeIn");
-          zero.classList.add("fadeOut");
-        } 
-        tipAmount = parseInt(billBtn.value) * (parseInt(tip.innerText) / 100);
-        inputTotal.textContent = tipAmount.toFixed(2);
-        total = tipAmount / parseInt(peopleBtn.value);
-        inputTipAmount.textContent = total.toFixed(2);
-      });
-    });
-  };
-
-  const resetForm = () => {
-    const resetBtn = document.querySelector(".reset");
-
-    resetBtn.addEventListener("click", () => {
-      billBtn.value = "";
-      peopleBtn.value = "";
-      inputTotal.textContent = "0.00";
-      inputTipAmount.textContent = "0.00";
-      // tipAmount = 0;
-      // total = 0;
-    });
-  };
-
-  selectTip();
-  resetForm();
 };
 
-tipApp();
+resetForm();
+
+billBtn.addEventListener("input", getBill);
+peopleBtn.addEventListener("input", getPeople);
+customBtn.addEventListener("input", custom);
+tips.forEach((btn) => {
+  btn.addEventListener("click", selectTip);
+});

@@ -95,10 +95,6 @@ section {
   }
 }
 
-// span {
-//   //color: $veryDarkCyan;
-// }
-
 .input {
   display: flex;
   background-repeat: no-repeat;
@@ -121,10 +117,6 @@ section {
   }
 
 }
-
-//.tip:nth-child(2n) {
-//  margin-left: 1rem;
-//}
 
 input::placeholder {
   color: $darkGrayishCyan;
@@ -179,10 +171,6 @@ input::placeholder {
   cursor: pointer;
   border: none;
 
-  //&:nth-child(2n) {
-  //  margin-left: 1rem;
-  //}
-
   @include breakpoint-up(large) {
     //margin-top: 0.813rem;
     width: 5.938rem;
@@ -195,9 +183,41 @@ input::placeholder {
   color: $veryDarkCyan;
 }
 
-.tip:nth-child(6) {
-  background: none;
-  color: $darkGrayishCyan;
+.tip:nth-child(6){
+  background: $veryLight;
+  color: $veryDarkCyan;
+  outline: none;
+
+  &:focus {
+    border: 2px solid $strongCyan;
+  }
+}
+
+.custom {
+  display: flex;
+  background-color: $veryLight;
+  border-radius: 0.3rem;
+  width: 9.375rem;
+  height: 2.25rem;
+  margin-top: 0.813rem;
+  color: $veryDarkCyan;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  cursor: pointer;
+  border: none;
+  outline: none;
+
+  &:focus {
+    border: 2px solid $strongCyan;
+  }
+
+  @include breakpoint-up(large) {
+    //margin-top: 0.813rem;
+    width: 5.938rem;
+    height: 2.25rem;
+  }
 }
 
 .amounts {
@@ -263,11 +283,15 @@ input::placeholder {
   font-weight: bold;
 }
 
-.focusCyan {
+.input.dollar:focus {
   border: 2px solid $strongCyan;
 }
 
-.focusRed {
+.input.people:focus {
+  border: 2px solid $red;
+}
+
+.tip.custom:focus {
   border: 2px solid $red;
 }
 

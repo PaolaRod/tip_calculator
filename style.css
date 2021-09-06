@@ -261,8 +261,47 @@ input::placeholder {
 }
 
 .tip:nth-child(6) {
-  background: none;
-  color: #5e7a7d;
+  background: #f4f5f5;
+  color: #00494d;
+  outline: none;
+}
+
+.tip:nth-child(6):focus {
+  border: 2px solid #26c0ab;
+}
+
+.custom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #f4f5f5;
+  border-radius: 0.3rem;
+  width: 9.375rem;
+  height: 2.25rem;
+  margin-top: 0.813rem;
+  color: #00494d;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: large;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.custom:focus {
+  border: 2px solid #26c0ab;
+}
+
+@media (min-width: 64em) {
+  .custom {
+    width: 5.938rem;
+    height: 2.25rem;
+  }
 }
 
 .amounts {
@@ -353,11 +392,15 @@ input::placeholder {
   font-weight: bold;
 }
 
-.focusCyan {
+.input.dollar:focus {
   border: 2px solid #26c0ab;
 }
 
-.focusRed {
+.input.people:focus {
+  border: 2px solid red;
+}
+
+.tip.custom:focus {
   border: 2px solid red;
 }
 
