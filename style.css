@@ -190,8 +190,6 @@ input::placeholder {
   background-image: url("images/icon-dollar.svg");
 }
 
-/*left: 1.75rem;*/
-/*top: 1.75rem;*/
 .container__tip {
   width: 100%;
 }
@@ -351,7 +349,7 @@ input::placeholder {
           flex-direction: column;
 }
 
-.tip3 {
+.tip__text {
   color: white;
 }
 
