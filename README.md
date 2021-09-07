@@ -1,9 +1,16 @@
-# Tip Calculator
-Se trata de una calculadora de propinas, con diferentes opciones de porcentajes, que devuelve el costo total de la factura y la propina por persona. Este proyecto forma parte de los desafíos dificultad junior de [Frontend Mentor](https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX/hub/tip-calculator-app-BZMjNvoMP). Te invito a usarla y a compartirla, quedando atenta si hay alguna recomendación de mejora o consejo, para seguir mejorando mis habilidades en el desarrollo web.
+# Frontend Mentor - Tip calculator app solution
+
+This is a solution to the [Tip calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+
+Users should be able to:
+
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Calculate the correct tip and total cost of the bill per person
 
 ## Links 📌
-- Solution URL: [GitHub](https://paolarod.github.io/tip_calculator/)
-- Live Site URL: [Tip Calculator](https://github.com/PaolaRod/tip_calculator)
+- Solution URL: [GitHub](https://github.com/PaolaRod/tip_calculator)
+- Live Site URL: [Tip Calculator](https://paolarod.github.io/tip_calculator/) 
  
 ## Built with 🛠
 - Semantic HTML5 markup
@@ -12,9 +19,8 @@ Se trata de una calculadora de propinas, con diferentes opciones de porcentajes,
 - Javascript 
 - [Sass](https://sass-lang.com/)
 
-## Screenshot 📖
-Una muestra de como se ve la calculadora. 
-![](https://github.com/PaolaRod/main/images/screenshot.png)
+## Screenshot 📖. 
+![](https://github.com/PaolaRod/tip_calculator/blob/main/images/screenshot.png)
 
 ## Author
 - Website - [Paola Rodríguez](https://paolarod.github.io/)
