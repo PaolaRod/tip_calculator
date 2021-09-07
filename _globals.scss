@@ -85,12 +85,17 @@ section {
 }
 
 .container__bill {
+  width: 100%;
 
   @include breakpoint-up(large) {
     width: 100%;
     left: 1.75rem;
     top: 28px;
   }
+}
+
+.container__people {
+  width: 100%;
 }
 
 .input {

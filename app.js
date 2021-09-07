@@ -15,12 +15,12 @@ let total = 0;
 const validateNum = (n) => {
   let rgx = /^[0-9]*\.?[0-9]*$/;
   return n.match(rgx);
-}
+};
 
 const validateInt = (n) => {
   let rgx = /^[0-9]*$/;
   return n.match(rgx);
-}
+};
 
 const getBill = () => {
   if (!validateNum(billBtn.value)) {
@@ -29,7 +29,7 @@ const getBill = () => {
 
   bill = parseFloat(billBtn.value);
   calTip();
-}
+};
 
 const selectTip = (e) => {
   tips.forEach((btn) => {
@@ -39,7 +39,7 @@ const selectTip = (e) => {
   });
   customBtn.value = "";
   calTip();
-}
+};
 
 const getPeople = () => {
   if (!validateInt(peopleBtn.value)) {
@@ -56,22 +56,26 @@ const getPeople = () => {
   }
 
   calTip();
-}
+};
 
 const custom = () => {
+  if (!validateInt(customBtn.value)) {
+    customBtn.value = customBtn.value.substring(0, customBtn.value.length - 1);
+  }
+
   tip = parseFloat(customBtn.value) / 100;
 
   if (customBtn.value !== "") {
     calTip();
   }
-}
+};
 
 const calTip = () => {
   tipAmount = (bill * tip) / people;
   total = bill * tip;
   inputTipAmount.textContent = tipAmount.toFixed(2);
   inputTotal.textContent = total.toFixed(2);
-}
+};
 
 const resetForm = () => {
   const resetBtn = document.querySelector(".reset");
